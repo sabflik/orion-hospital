@@ -41,13 +41,14 @@ public class Read_Input {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+		return patients_list;
 		/*for(int i=0; i< patients_list.size(); i++) {
 			Patient p = patients_list.get(i);
 			System.out.println(p.id + ", " + p.name + ", " + p.dob + ", " + p.gender);
 		}*/
 		
-		
+	}
+	public static ArrayList<Ward> getWardsList(){
 		
 		// Read in Movement file
 		ArrayList<Ward> wards_list = new ArrayList<Ward>();
@@ -74,13 +75,15 @@ public class Read_Input {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+		return wards_list;
 		/*for(int i=0; i< wards_list.size(); i++) {
 			Ward w = wards_list.get(i);
 			System.out.println(w.id + ", " + w.name + ", " + w.capacity);
 		}*/
 		
-		
+	}
+	
+	public static ArrayList<Movement> getMovementsList(){
 		// Read in Movement file
 		ArrayList<Movement> movements_list = new ArrayList<Movement>();
 			
@@ -114,7 +117,7 @@ public class Read_Input {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+		return movements_list;
 		/*for(int i=0; i< movements_list.size(); i++) {
 			Movement m = moevements_list.get(i);
 			System.out.println();
