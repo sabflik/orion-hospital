@@ -1,3 +1,5 @@
+package com.company.models;
+
 public class Patient {
 	
 	private int id;

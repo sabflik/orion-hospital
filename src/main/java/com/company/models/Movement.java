@@ -1,3 +1,5 @@
+package com.company.models;
+
 public class Movement {
 	
 	private int event_index;

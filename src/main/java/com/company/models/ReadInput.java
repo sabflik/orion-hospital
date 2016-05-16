@@ -1,17 +1,20 @@
+package com.company.models;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Date;
+import java.util.LinkedList;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class Read_Input {
+public class ReadInput {
 
 	public static LinkedList<Patient> getPatientsList(String[] args) {
 		
 		// Read in Patient file
-		ArrayList<Patient> patients_list = new ArrayList<Patient>();
+		LinkedList<Patient> patients_list = new LinkedList<Patient>();
 		
 		try {
 			

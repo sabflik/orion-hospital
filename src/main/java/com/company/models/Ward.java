@@ -1,3 +1,5 @@
+package com.company.models;
+
 public class Ward {
 	
 	private int id;
