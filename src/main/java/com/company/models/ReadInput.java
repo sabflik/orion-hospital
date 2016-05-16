@@ -32,8 +32,8 @@ public class ReadInput {
 				
 				String[] y = x[2].split("/");
 				@SuppressWarnings("deprecation")
-				Date dob = new Date(Integer.parseInt(y[2]), Integer.parseInt(y[1]), Integer.parseInt(y[0]));
-				SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+				Date dob = new Date(Integer.parseInt(y[2]-1900), Integer.parseInt(y[1]-1), Integer.parseInt(y[0]));
+				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 				String strDate = sdf.format(dob);
 				int gender = Integer.parseInt(x[3]);
 				
@@ -109,8 +109,8 @@ public class ReadInput {
 				
 				String[] y = x[4].split("-");
 				@SuppressWarnings("deprecation")
-				Date date = new Date(Integer.parseInt(y[2]), Integer.parseInt(y[1]), Integer.parseInt(y[0]));
-				SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+				Date date = new Date(Integer.parseInt(y[0])-1900, Integer.parseInt(y[1])-1, Integer.parseInt(y[2]));
+				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 				String strDate = sdf.format(date);
 				
 				Movement m = new Movement(event_index, id, from_ward, to_ward, strDate);
