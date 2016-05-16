@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class Read_Input {
 
-	public static void main(String[] args) {
+	public static LinkedList<Patient> getPatientsList(String[] args) {
 		
 		LinkedList<Patient> patients_list = new LinkedList<Patient>();
 		
