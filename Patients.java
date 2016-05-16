@@ -11,9 +11,20 @@ public class Patient {
 		this.dob = dob;
 		this.gender = gender;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	int getId() {
+		return id;
 	}
-
+	
+	String getName() {
+		return name;
+	}
+	
+	String getDob() {
+		return dob;
+	}
+	
+	int getGender() {
+		return gender;
+	}
 }
