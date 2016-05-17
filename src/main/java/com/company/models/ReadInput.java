@@ -51,10 +51,10 @@ public class ReadInput {
 		}*/
 		
 	}
-	public static LinkedList<Ward> getWardsList(){
+	public static ArrayList<Ward> getWardsList(){
 		
 		// Read in Movement file
-		LinkedList<Ward> wards_list = new LinkedList<Ward>();
+		ArrayList<Ward> wards_list = new ArrayList<Ward>();
 		
 		try {// Read in file
 			
@@ -86,9 +86,9 @@ public class ReadInput {
 		
 	}
 	
-	public static LinkedList<Movement> getMovementsList(){
+	public static ArrayList<Movement> getMovementsList(){
 		// Read in Movement file
-		LinkedList<Movement> movements_list = new LinkedList<Movement>();
+		ArrayList<Movement> movements_list = new ArrayList<Movement>();
 			
 		try {// Read in file
 			
@@ -120,10 +120,7 @@ public class ReadInput {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		for(int i=0; i< movements_list.size(); i++) {
-			Movement m = movements_list.get(i);
-			System.out.println(m);
-		}
+
 		return movements_list;
 			
 		

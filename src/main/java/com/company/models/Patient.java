@@ -6,28 +6,28 @@ public class Patient {
 	private String name;
 	private String dob;
 	private int gender;
+	private int currentWard;
+	private int waitingWard;
+
+	public int getCurrentWard() {
+		return currentWard;
+	}
+
+	public void setCurrentWard(int currentWard) {
+		this.currentWard = currentWard;
+	}
+
+	public int getWaitingWard() {
+		return waitingWard;
+	}
+
+	public void setWaitingWard(int waitingWard) {
+		this.waitingWard = waitingWard;
+	}
 	
-	public Patient(){
+	public Patient() {
 		
 	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
-	public void setGender(int gender) {
-		this.gender = gender;
-	}
-
-	
 
 	public Patient(int id, String name, String dob, int gender) {
 		this.id = id;

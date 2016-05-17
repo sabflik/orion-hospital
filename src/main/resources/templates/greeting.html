@@ -21,7 +21,7 @@
            { },
            function(data) {
 	       	   hashmap = data.body;
-    	       console.log("wards: " + hashmap);
+    	       console.log(hashmap);
     	       
     	       $.get( 
   	               "/services/hello/waitingMapPath",
@@ -55,13 +55,13 @@
 			    	var deneb    = xy(500.0,   820);
 			    	var eight = xy(500.0, 570);
 			    	
-			    	L.marker(     em).addTo(map).bindPopup(      'em');
-			    	L.marker(     wait).addTo(map).bindPopup(      'wait');
-			    	L.marker(     em).addTo(map).bindPopup(      'Sol' + JSON.stringify(hashmap["1"]));
-			    	L.marker(   mizar).addTo(map).bindPopup(    'Mizar');
-			    	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
-			    	L.marker(   deneb).addTo(map).bindPopup(    'Deneb');
-			    	L.marker(eight).addTo(map).bindPopup('eight');
+			    	L.marker(     em).addTo(map).bindPopup(      'em' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
+			    	L.marker(     wait).addTo(map).bindPopup(      'wait' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
+			    	L.marker(     em).addTo(map).bindPopup(      'Sol' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
+			    	L.marker(   mizar).addTo(map).bindPopup(    'Mizar' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
+			    	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
+			    	L.marker(   deneb).addTo(map).bindPopup(    'Deneb' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
+			    	L.marker(eight).addTo(map).bindPopup('eight' + JSON.stringify(hashmap["1"]) + "\n" + JSON.stringify(waitingHashMap["1"]));
 			
 			    	var travel = L.polyline([sol, deneb]).addTo(map);
 			

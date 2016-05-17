@@ -33,20 +33,20 @@ public class HelloResource implements IHelloResource {
 
 	@Override
 	public ResponseEntity getMap() {
-		// TODO Auto-generated method stub
-		HashMap<Integer, LinkedList<Patient>> patientsList = new HashMap<Integer, LinkedList<Patient>>();
-		//patientsList = Maps.patientsInWard;
+//		// TODO Auto-generated method stub
+//		HashMap<Integer, LinkedList<Patient>> patientsList = new HashMap<Integer, LinkedList<Patient>>();
+//		//patientsList = Maps.patientsInWard;
+//		
+//		LinkedList<Patient> patientsLinkedlist = new LinkedList<Patient>();
+//		Patient p = new Patient(1, "abc", "25/09/2015", 1);
+//		patientsLinkedlist.add(p);
+//		
+//		
+//		patientsList.put(1, patientsLinkedlist);
 		
-		LinkedList<Patient> patientsLinkedlist = new LinkedList<Patient>();
-		Patient p = new Patient(1, "abc", "25/09/2015", 1);
-		patientsLinkedlist.add(p);
-		
-		
-		patientsList.put(1, patientsLinkedlist);
-		
-		return new ResponseEntity(patientsList, HttpStatus.OK);
-		
-	//	return new ResponseEntity(Maps.patientsInWard, HttpStatus.OK);
+	//	return new ResponseEntity(patientsList, HttpStatus.OK);
+		Maps.main(new String[]{""});
+		return new ResponseEntity(Maps.patientsInWard, HttpStatus.OK);
 
 	}
 	
@@ -63,6 +63,7 @@ public class HelloResource implements IHelloResource {
 //		
 //		patientsList.put(1, patientsLinkedlist);
 		
+		Maps.main(new String[]{""});
 		return new ResponseEntity(Maps.waitingLists, HttpStatus.OK);
 		
 		
