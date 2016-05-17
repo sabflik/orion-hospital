@@ -48,4 +48,11 @@ public class HelloResource implements IHelloResource {
 		
 		
 	}
+
+	@Override
+	public ResponseEntity getStats(String month, String year) {
+		// TODO Auto-generated method stub
+		HashMap<Integer,String> statisticsList = new HashMap<Integer, String>();
+		return null;
+	}
 }
