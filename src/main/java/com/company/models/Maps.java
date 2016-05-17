@@ -7,8 +7,8 @@ public class Maps {
 	public static int numTurnedAway = 0;
 	public static int numDeaths = 0;
 	
-	public static HashMap<String, LinkedList<Patient>> patientsInWard = new HashMap<String, LinkedList<Patient>>();
-	public static HashMap<String, LinkedList<Patient>> waitingLists = new HashMap<String, LinkedList<Patient>>();
+	public static HashMap<Integer, LinkedList<Patient>> patientsInWard = new HashMap<Integer, LinkedList<Patient>>();
+	public static HashMap<Integer, LinkedList<Patient>> waitingLists = new HashMap<Integer, LinkedList<Patient>>();
 	
 	public static void admitPatient(int wardID, Patient patient){
 		
@@ -156,6 +156,7 @@ public class Maps {
 	
 	public static void movePatient(int fromWard, int toWard, int patientID){
 		admitPatient(toWard, patientID);
+		
 		
 	}
 }
