@@ -13,6 +13,7 @@
 <p>Hello, Welcome to Orion Hospital!</p>
  <script type = "text/javascript">
  	var hashmap;
+ 	var waitingHashMap;
  	
     $(document).ready(function() {
         $.get( 
@@ -20,45 +21,54 @@
            { },
            function(data) {
 	       	   hashmap = data.body;
-    	       console.log(hashmap);
-	          
+    	       console.log("wards: " + hashmap);
+    	       
+    	       $.get( 
+  	               "/services/hello/waitingMapPath",
+  	               { },
+  	               function(waitingData) {
+  	            	 waitingHashMap = waitingData.body;
+  	        	     console.log(waitingHashMap);
 	        
-	    	var map = L.map('mapid', {
-	    		crs: L.CRS.Simple,
-	    		minZoom: -3
-	    	});
-	
-	    	var yx = L.latLng;
-	
-	    	var xy = function(x, y) {
-	    		if (L.Util.isArray(x)) {    // When doing xy([x, y]);
-	    			return yx(x[1], x[0]);
-	    		}
-	    		return yx(y, x);  // When doing xy(x, y);
-	    	};
-	
-	    	var bounds = [xy(-25, -26.5), xy(1023, 1021.5)];
-	    	var image = L.imageOverlay('http://i63.tinypic.com/2jbjr5e.png', bounds).addTo(map);
-	
-	    	var em = xy(200, 700.0);
-	    	var wait = xy(200, 500.0);
-	    	var sol      = xy(350.2, 600.0);
-	    	var mizar    = xy( 41.6, 130.1);
-	    	var kruegerZ = xy( 13.4,  56.5);
-	    	var deneb    = xy(218.7,   8.3);
-	
-	    	L.marker(     em).addTo(map).bindPopup(      'Sol' + JSON.stringify(hashmap["1"]));
-	    	L.marker(     wait).addTo(map).bindPopup(      'Sol');
-	    	L.marker(     sol).addTo(map).bindPopup(      'Sol');
-	    	L.marker(   mizar).addTo(map).bindPopup(    'Mizar');
-	    	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
-	    	L.marker(   deneb).addTo(map).bindPopup(    'Deneb');
-	
-	    	var travel = L.polyline([sol, deneb]).addTo(map);
-	
-	    	map.setView(xy(120, 70), 1);
-           }
-        );	        	
+			    	var map = L.map('mapid', {
+			    		crs: L.CRS.Simple,
+			    		minZoom: -3
+			    	});
+			
+			    	var yx = L.latLng;
+			
+			    	var xy = function(x, y) {
+			    		if (L.Util.isArray(x)) {    // When doing xy([x, y]);
+			    			return yx(x[1], x[0]);
+			    		}
+			    		return yx(y, x);  // When doing xy(x, y);
+			    	};
+			
+			    	var bounds = [xy(-25, -26.5), xy(1023, 1021.5)];
+			    	var image = L.imageOverlay('http://i63.tinypic.com/2jbjr5e.png', bounds).addTo(map);
+			
+			    	var em = xy(200, 820.0);
+			    	var wait = xy(200, 550.0);
+			    	var sol      = xy(360.2, 650.0);
+			    	var mizar    = xy( 700, 400);
+			    	var kruegerZ = xy( 700,  820);
+			    	var deneb    = xy(500.0,   820);
+			    	var eight = xy(500.0, 570);
+			    	
+			    	L.marker(     em).addTo(map).bindPopup(      'em');
+			    	L.marker(     wait).addTo(map).bindPopup(      'wait');
+			    	L.marker(     em).addTo(map).bindPopup(      'Sol' + JSON.stringify(hashmap["1"]));
+			    	L.marker(   mizar).addTo(map).bindPopup(    'Mizar');
+			    	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
+			    	L.marker(   deneb).addTo(map).bindPopup(    'Deneb');
+			    	L.marker(eight).addTo(map).bindPopup('eight');
+			
+			    	var travel = L.polyline([sol, deneb]).addTo(map);
+			
+			    	map.setView(xy(120, 70), 1);
+		           }
+		        );	   
+           });
    	
         
         	
