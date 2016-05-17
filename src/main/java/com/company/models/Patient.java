@@ -11,7 +11,7 @@ public class Patient {
 		this.id = id;
 		this.name = name;
 		this.dob = dob;
-		this.gender = gender;|
+		this.gender = gender;
 	}
 	
 	int getId() {
