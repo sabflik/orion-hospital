@@ -14,7 +14,7 @@
  <script type = "text/javascript">
     $(document).ready(function() {
         $.get( 
-           "/services/hello/map",
+           "/services/hello/mapPath",
            { },
            function(data) {
            	console.log(data);
@@ -38,19 +38,21 @@
     	var bounds = [xy(-25, -26.5), xy(1023, 1021.5)];
     	var image = L.imageOverlay('http://i63.tinypic.com/2jbjr5e.png', bounds).addTo(map);
 
-    	var em = xy(200, 700.0);
-    	var wait = xy(200, 500.0);
-    	var sol      = xy(350.2, 600.0);
-    	var mizar    = xy( 41.6, 130.1);
-    	var kruegerZ = xy( 13.4,  56.5);
-    	var deneb    = xy(218.7,   8.3);
+    	var em = xy(200, 820.0);
+    	var wait = xy(200, 550.0);
+    	var sol      = xy(360.2, 650.0);
+    	var mizar    = xy( 700, 400);
+    	var kruegerZ = xy( 700,  820);
+    	var deneb    = xy(500.0,   820);
+    	var eight = xy(500.0, 570);
 
-    	L.marker(     em).addTo(map).bindPopup(      'Sol');
-    	L.marker(     wait).addTo(map).bindPopup(      'Sol');
+    	L.marker(     em).addTo(map).bindPopup(      'em');
+    	L.marker(     wait).addTo(map).bindPopup(      'wait');
     	L.marker(     sol).addTo(map).bindPopup(      'Sol');
     	L.marker(   mizar).addTo(map).bindPopup(    'Mizar');
     	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
     	L.marker(   deneb).addTo(map).bindPopup(    'Deneb');
+    	L.marker(eight).addTo(map).bindPopup('eight');
 
     	var travel = L.polyline([sol, deneb]).addTo(map);
 
