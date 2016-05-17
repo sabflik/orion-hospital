@@ -13,8 +13,8 @@ import com.company.models.ReadInput;
 public class HelloResource implements IHelloResource {
     @Override
     public String hello(@DefaultValue("World!") String name) {
-        ReadInput.getPatientsList();
-        ReadInput.getMovementsList();
+//        ReadInput.getPatientsList();
+//        ReadInput.getMovementsList();
         
     	return "Hello " + name;
     }

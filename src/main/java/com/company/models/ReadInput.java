@@ -120,10 +120,7 @@ public class ReadInput {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		for(int i=0; i< movements_list.size(); i++) {
-			Movement m = movements_list.get(i);
-			System.out.println(m);
-		}
+
 		return movements_list;
 			
 		
