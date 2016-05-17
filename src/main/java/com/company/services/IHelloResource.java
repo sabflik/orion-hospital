@@ -31,5 +31,10 @@ public interface IHelloResource {
     @Produces("application/json")
     ResponseEntity getMap();
     
+    
+    @GET
+    @Path("stats")
+    @Produces("application/json")
+    ResponseEntity getStats(@PathParam("month") String month, @PathParam("year") String year);
 
 }
