@@ -51,10 +51,10 @@ public class ReadInput {
 		}*/
 		
 	}
-	public static ArrayList<Ward> getWardsList(){
+	public static LinkedList<Ward> getWardsList(){
 		
 		// Read in Movement file
-		ArrayList<Ward> wards_list = new ArrayList<Ward>();
+		LinkedList<Ward> wards_list = new LinkedList<Ward>();
 		
 		try {// Read in file
 			
@@ -86,9 +86,9 @@ public class ReadInput {
 		
 	}
 	
-	public static ArrayList<Movement> getMovementsList(){
+	public static LinkedList<Movement> getMovementsList(){
 		// Read in Movement file
-		ArrayList<Movement> movements_list = new ArrayList<Movement>();
+		LinkedList<Movement> movements_list = new LinkedList<Movement>();
 			
 		try {// Read in file
 			

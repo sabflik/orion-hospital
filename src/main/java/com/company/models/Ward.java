@@ -6,21 +6,41 @@ public class Ward {
 	private String name;
 	private int capacity;
 
-	Ward(int id, String name, int capacity) {
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public Ward(){
+		
+	}
+	
+	public Ward(int id, String name, int capacity) {
 		this.id = id;
 		this.name = name;
 		this.capacity = capacity;
 	}
 	
-	int getId() {
+	public int getId() {
 		return id;
 	}
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	int getcapacity() {
+	public int getcapacity() {
 		return capacity;
 	}
 	

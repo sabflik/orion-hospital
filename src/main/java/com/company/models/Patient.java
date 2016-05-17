@@ -6,27 +6,49 @@ public class Patient {
 	private String name;
 	private String dob;
 	private int gender;
+	
+	public Patient(){
+		
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 
-	Patient(int id, String name, String dob, int gender) {
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public void setGender(int gender) {
+		this.gender = gender;
+	}
+
+	
+
+	public Patient(int id, String name, String dob, int gender) {
 		this.id = id;
 		this.name = name;
 		this.dob = dob;
 		this.gender = gender;
 	}
 	
-	int getId() {
+	public int getId() {
 		return id;
 	}
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	String getDob() {
+	public String getDob() {
 		return dob;
 	}
 	
-	int getGender() {
+	public int getGender() {
 		return gender;
 	}
 }

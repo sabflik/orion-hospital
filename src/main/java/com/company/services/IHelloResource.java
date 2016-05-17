@@ -21,13 +21,15 @@ public interface IHelloResource {
      */
 
     @GET
-    @Path("/message")
     @Produces("text/plain")
     String hello(@DefaultValue("World!") @QueryParam("name") String name);
-
+    
+    
+    
     @GET
-    @Path("/map")
+    @Path("mapPath")
     @Produces("application/json")
     ResponseEntity getMap();
     
+
 }

@@ -1,14 +1,19 @@
 package com.company.services;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.ws.rs.DefaultValue;
 
+import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.company.models.Maps;
+import com.company.models.Patient;
 import com.company.models.ReadInput;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Chang Kon Han
@@ -21,16 +26,26 @@ public class HelloResource implements IHelloResource {
     public String hello(@DefaultValue("World!") String name) {
         ReadInput.getPatientsList();
         ReadInput.getMovementsList();
+        ReadInput.getWardsList();
         
     	return "Hello " + name;
     }
 
 	@Override
 	public ResponseEntity getMap() {
-		Map<Integer, String> map = new HashMap<Integer, String>();
-		map.put(1, "test");
-		return new ResponseEntity<>(map, HttpStatus.OK);
+		// TODO Auto-generated method stub
+		HashMap<Integer, LinkedList<Patient>> patientsList = new HashMap<Integer, LinkedList<Patient>>();
+		//patientsList = Maps.patientsInWard;
+		
+		LinkedList<Patient> patientsLinkedlist = new LinkedList<Patient>();
+		Patient p = new Patient(1, "abc", "25/09/2015", 1);
+		patientsLinkedlist.add(p);
+		
+		
+		patientsList.put(1, patientsLinkedlist);
+		
+		return new ResponseEntity(patientsList, HttpStatus.OK);
+		
+		
 	}
-    
-
 }
