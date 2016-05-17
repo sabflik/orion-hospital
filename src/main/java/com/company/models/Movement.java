@@ -7,8 +7,38 @@ public class Movement {
 	private String from_ward;
 	private String to_ward;
 	private String date;
+	
+	public int getEvent_index() {
+		return event_index;
+	}
 
-	Movement(int event_index, int id, String from_ward, String to_ward, String date) {
+	public void setEvent_index(int event_index) {
+		this.event_index = event_index;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setFrom_ward(String from_ward) {
+		this.from_ward = from_ward;
+	}
+
+	public void setTo_ward(String to_ward) {
+		this.to_ward = to_ward;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	
+	
+	public Movement(){
+		
+	}
+
+	public Movement(int event_index, int id, String from_ward, String to_ward, String date) {
 		this.event_index = event_index;
 		this.id = id;
 		this.from_ward = from_ward;
@@ -16,23 +46,23 @@ public class Movement {
 		this.date = date;
 	}
 	
-	int getEventIndex() {
+	public int getEventIndex() {
 		return event_index;
 	}
 	
-	int getId() {
+	public int getId() {
 		return id;
 	}
 	
-	String getFrom_ward() {
+	public String getFrom_ward() {
 		return from_ward;
 	}
 	
-	String getTo_ward() {
+	public String getTo_ward() {
 		return to_ward;
 	}
 	
-	String getDate() {
+	public String getDate() {
 		return date;
 	}
 }

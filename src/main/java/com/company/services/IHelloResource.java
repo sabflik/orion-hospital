@@ -2,6 +2,8 @@ package com.company.services;
 
 import javax.ws.rs.*;
 
+import org.springframework.http.ResponseEntity;
+
 /**
  * <p>Example resource which returns a simple Hello message</p>
  * @author Chang Kon Han
@@ -21,5 +23,13 @@ public interface IHelloResource {
     @GET
     @Produces("text/plain")
     String hello(@DefaultValue("World!") @QueryParam("name") String name);
+    
+    
+    
+    @GET
+    @Path("mapPath")
+    @Produces("application/json")
+    ResponseEntity getMap();
+    
 
 }
