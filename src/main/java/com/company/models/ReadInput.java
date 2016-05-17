@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class ReadInput {
 
-	public static LinkedList<Patient> getPatientsList(String[] args) {
+	public static LinkedList<Patient> getPatientsList() {
 		
 		// Read in Patient file
 		LinkedList<Patient> patients_list = new LinkedList<Patient>();
@@ -120,11 +120,12 @@ public class ReadInput {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		for(int i=0; i< movements_list.size(); i++) {
+			Movement m = movements_list.get(i);
+			System.out.println(m);
+		}
 		return movements_list;
-		/*for(int i=0; i< movements_list.size(); i++) {
-			Movement m = moevements_list.get(i);
-			System.out.println();
-		}*/		
+			
 		
 		
 	}

@@ -2,6 +2,8 @@ package com.company.services;
 
 import javax.ws.rs.DefaultValue;
 
+import com.company.models.ReadInput;
+
 /**
  * @author Chang Kon Han
  * @author John Law
@@ -11,6 +13,9 @@ import javax.ws.rs.DefaultValue;
 public class HelloResource implements IHelloResource {
     @Override
     public String hello(@DefaultValue("World!") String name) {
-        return "Hello " + name;
+        ReadInput.getPatientsList();
+        ReadInput.getMovementsList();
+        
+    	return "Hello " + name;
     }
 }
