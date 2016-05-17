@@ -4,26 +4,21 @@ import java.util.HashMap;
 import java.util.LinkedList;
 public class Maps {
 	
+	public static int numTurnedAway = 0;
+	
 	public static HashMap<String, LinkedList<Patient>> patientsInWard = new HashMap<String, LinkedList<Patient>>();
 	public static HashMap<String, LinkedList<Patient>> waitingLists = new HashMap<String, LinkedList<Patient>>();
 	
-	public static void admitPatient(wardID, Patient patient){
+	public static void admitPatient(int wardID, Patient patient){
 		
 		switch (wardID){
 		case 1:
 			LinkedList<Patient> list = patientsInWard.get(wardID);
 			if (list != null){
-				if (list.size() >= 70){
-					LinkedList<Patient> waitingList = waitingLists.get(wardID);
-					if (waitingList != null){
-						waitingList.add(patient);
-					} else {
-						waitingList = new LinkedList<Patient>();
-						waitingList.add(patient);
-						waitingLists.put(wardID, waitingList);
-					}
-				} else {
+				if (list.size() <= 70){
 					list.add(patient);
+				} else {
+					numTurnedAway++
 				}
 			} else {
 				list = new LinkedList<Patient>();
@@ -55,7 +50,7 @@ public class Maps {
 		case 3:
 			LinkedList<Patient> list = patientsInWard.get(wardID);
 			if (list != null){
-				if (list.size() >= 70){
+				if (list.size() >= 100){
 					LinkedList<Patient> waitingList = waitingLists.get(wardID);
 					if (waitingList != null){
 						waitingList.add(patient);
@@ -77,7 +72,7 @@ public class Maps {
 		case 4:
 			LinkedList<Patient> list = patientsInWard.get(wardID);
 			if (list != null){
-				if (list.size() >= 70){
+				if (list.size() >= 40){
 					LinkedList<Patient> waitingList = waitingLists.get(wardID);
 					if (waitingList != null){
 						waitingList.add(patient);
@@ -99,7 +94,7 @@ public class Maps {
 		case 5:
 			LinkedList<Patient> list = patientsInWard.get(wardID);
 			if (list != null){
-				if (list.size() >= 70){
+				if (list.size() >= 30){
 					LinkedList<Patient> waitingList = waitingLists.get(wardID);
 					if (waitingList != null){
 						waitingList.add(patient);
@@ -121,7 +116,7 @@ public class Maps {
 		case 6:
 			LinkedList<Patient> list = patientsInWard.get(wardID);
 			if (list != null){
-				if (list.size() >= 70){
+				if (list.size() >= 40){
 					LinkedList<Patient> waitingList = waitingLists.get(wardID);
 					if (waitingList != null){
 						waitingList.add(patient);
@@ -143,7 +138,7 @@ public class Maps {
 		case 7:
 			LinkedList<Patient> list = patientsInWard.get(wardID);
 			if (list != null){
-				if (list.size() >= 70){
+				if (list.size() >= 10){
 					LinkedList<Patient> waitingList = waitingLists.get(wardID);
 					if (waitingList != null){
 						waitingList.add(patient);
@@ -162,5 +157,9 @@ public class Maps {
 			}
 			break;
 		}
+	}
+	
+	public static void movePatient(int fromWard, int toWard, int patientID){
+		
 	}
 }
