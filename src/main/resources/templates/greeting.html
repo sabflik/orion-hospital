@@ -12,56 +12,55 @@
 <body>
 <p>Hello, Welcome to Orion Hospital!</p>
  <script type = "text/javascript">
+ 	var hashmap;
+ 	
     $(document).ready(function() {
         $.get( 
-           "/services/hello/map",
+           "/services/hello/mapPath",
            { },
            function(data) {
-           	console.log(data);
+	       	   hashmap = data.body;
+    	       console.log(hashmap);
+	          
+	        
+	    	var map = L.map('mapid', {
+	    		crs: L.CRS.Simple,
+	    		minZoom: -3
+	    	});
+	
+	    	var yx = L.latLng;
+	
+	    	var xy = function(x, y) {
+	    		if (L.Util.isArray(x)) {    // When doing xy([x, y]);
+	    			return yx(x[1], x[0]);
+	    		}
+	    		return yx(y, x);  // When doing xy(x, y);
+	    	};
+	
+	    	var bounds = [xy(-25, -26.5), xy(1023, 1021.5)];
+	    	var image = L.imageOverlay('http://i63.tinypic.com/2jbjr5e.png', bounds).addTo(map);
+	
+	    	var em = xy(200, 700.0);
+	    	var wait = xy(200, 500.0);
+	    	var sol      = xy(350.2, 600.0);
+	    	var mizar    = xy( 41.6, 130.1);
+	    	var kruegerZ = xy( 13.4,  56.5);
+	    	var deneb    = xy(218.7,   8.3);
+	
+	    	L.marker(     em).addTo(map).bindPopup(      'Sol' + JSON.stringify(hashmap["1"]));
+	    	L.marker(     wait).addTo(map).bindPopup(      'Sol');
+	    	L.marker(     sol).addTo(map).bindPopup(      'Sol');
+	    	L.marker(   mizar).addTo(map).bindPopup(    'Mizar');
+	    	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
+	    	L.marker(   deneb).addTo(map).bindPopup(    'Deneb');
+	
+	    	var travel = L.polyline([sol, deneb]).addTo(map);
+	
+	    	map.setView(xy(120, 70), 1);
            }
-        );
-        
-    	var map = L.map('mapid', {
-    		crs: L.CRS.Simple,
-    		minZoom: -3
-    	});
-
-    	var yx = L.latLng;
-
-    	var xy = function(x, y) {
-    		if (L.Util.isArray(x)) {    // When doing xy([x, y]);
-    			return yx(x[1], x[0]);
-    		}
-    		return yx(y, x);  // When doing xy(x, y);
-    	};
-
-    	var bounds = [xy(-25, -26.5), xy(1023, 1021.5)];
-    	var image = L.imageOverlay('http://i63.tinypic.com/2jbjr5e.png', bounds).addTo(map);
-
-    	var em = xy(200, 700.0);
-    	var wait = xy(200, 500.0);
-    	var sol      = xy(350.2, 600.0);
-    	var mizar    = xy( 41.6, 130.1);
-    	var kruegerZ = xy( 13.4,  56.5);
-    	var deneb    = xy(218.7,   8.3);
-
-    	L.marker(     em).addTo(map).bindPopup(      'Sol');
-    	L.marker(     wait).addTo(map).bindPopup(      'Sol');
-    	L.marker(     sol).addTo(map).bindPopup(      'Sol');
-    	L.marker(   mizar).addTo(map).bindPopup(    'Mizar');
-    	L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
-    	L.marker(   deneb).addTo(map).bindPopup(    'Deneb');
-
-    	var travel = L.polyline([sol, deneb]).addTo(map);
-
-    	map.setView(xy(120, 70), 1);
-        	
+        );	        	
    	
-       	var circle = L.circle([20, 30], 500, {
-       	    color: 'red',
-       	    fillColor: '#f03',
-       	    fillOpacity: 0.3
-       	}).addTo(map);
+        
         	
         
         	
@@ -71,6 +70,67 @@
  
  <div id="mapid" style="height:1500px"></div>
  
+<div id="table">
+			<table class="table table-bordered">
+				<thead>
+				</thead>
 
+				<tbody>
+					<tr>
+						<td>Number of patients in Waiting Room</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients in Emergency Department</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients in General Ward</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients on waiting list for General Ward</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients in Ward 1</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients on waiting list for Ward 1</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients in Ward 2</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients on waiting list for Ward 2</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients in Ward 3</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients on waiting list for Ward 3</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients in Ward 4</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Number of patients on waiting list for Ward 4</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>Total number of deaths</td>
+						<td>81</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
 </body>
 </html>

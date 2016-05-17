@@ -46,6 +46,25 @@ public class HelloResource implements IHelloResource {
 		
 		return new ResponseEntity(patientsList, HttpStatus.OK);
 		
+	//	return new ResponseEntity(Maps.patientsInWard, HttpStatus.OK);
+
+	}
+	
+	@Override
+	public ResponseEntity getWaitingMap() {
+//		// TODO Auto-generated method stub
+//		HashMap<Integer, LinkedList<Patient>> patientsList = new HashMap<Integer, LinkedList<Patient>>();
+//		//patientsList = Maps.patientsInWard;
+//		
+//		LinkedList<Patient> patientsLinkedlist = new LinkedList<Patient>();
+//		Patient p = new Patient(1, "abc", "25/09/2015", 1);
+//		patientsLinkedlist.add(p);
+//		
+//		
+//		patientsList.put(1, patientsLinkedlist);
+		
+		return new ResponseEntity(Maps.waitingLists, HttpStatus.OK);
+		
 		
 	}
 

@@ -30,7 +30,11 @@ public interface IHelloResource {
     @Path("mapPath")
     @Produces("application/json")
     ResponseEntity getMap();
-    
+
+    @GET
+    @Path("waitingMapPath")
+    @Produces("application/json")
+    ResponseEntity getWaitingMap();
     
     @GET
     @Path("stats")
